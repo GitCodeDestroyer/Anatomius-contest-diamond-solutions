@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font: lighter 18px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #3C3F50;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 8px;
+    color: #3C3F50;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn::selection {
+    background: transparent;
+}
+
+.btn:hover {
+    background: #F6F6F6;
+}
+
+.btn:active {
+    background: #EEE;
+}
+
+.btn span {
+    font-size: 22px;
+    line-height: 45px;
+    float: left;
+    padding-right: 8px;
+}
+
+.mask {
+    position: fixed;
+    top: 45px;
+    left: 0;
+    height: calc(100% - 45px);
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.triangle {
+    top: 73px;
+    z-index: 2;
+    left: calc(4% + 32.5px - 18px);
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 21px solid #FEFEFE;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/*************** TABLE STYLES **************/
+
+thead {
+    border-bottom: none;
+}
+
+th {
+    background: #FFF;
+    padding: 0 5px;
+    border-left: 1px solid #F5F5F5;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+    -webkit-user-select: text;
+}
+
+tr.even td {
+    border-left: 1px solid #F5F5F5;
+}
+
+tr.odd td {
+    border-left: 1px solid #EFEFEF;
+}
+tr.even {
+    background: #FFF;
+}
+
+tr.odd {
+    background: #F7F7F7;
+}
+
+/*************** TOP NAVIGATION **************/
+
+.nav {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #FFF;
+    z-index: 10;
+}
+
+/****************** SIDEBAR ******************/
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    border-right: 1px solid #EFEFEF;
+    background: #FFF;
+    overflow: auto;
+}
+
+.sidebar {
+    padding: 15px;
+}
+
+.dataTables_filter input,
+.new-ill select,
+.sidebar input:not([type=radio]) {
+    height: 30px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: lighter;
+    padding: 10px;
+    margin: 7px 0 20px 0;
+    background: #FAFAFA;
+    border-radius: 3px;
+    border: 1px solid #EFEFEF;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .03);
+    display: block;
+}
+
+.sidebar p {
+    margin-top: 20px;
+}
+
+.sidebar .radios label {
+    margin: 0 15px 0 7px;
+}
+
+.sidebar span {
+    margin-right: 30px;
+}
+
+.sidebar input {
+    margin-right: 0px;
+}
+
+.sidebar .btn {
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 20px;
+    color: #FFF;
+    background: #4fc953;
+    border: none;
+}
+
+.sidebar .btn:hover {
+    background: #4fd654;
+}
+
+.error {
+    color: #E9908A;
+}
+
+#date {
+    padding: 4px 15px;
+    height: 35px;
+}
+
+.new-patient {
+    /* display: none; */
+}
+
+.new-ill {
+    display: none;
+}
+
+.part-info h4 {
+    margin-bottom: -20px;
+    margin-top: 5px;
+}
+.part-info h2 {
+    margin: 25px 0 10px 0;
+}
+
+.part-info .no-ills {
+    margin-top: calc((90vh - 24px) / 2);
+}
+
+/****************** CONTENT ******************/
+
+.content {
+    width: calc(100vw - 320px);
+    margin-left: 320px;
+    padding: 55px 2%;
+}
+
+.content .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 320px);
+}
+
+.content .nav .view {
+    float: right;
+}
+
+.content .nav .view a {
+    line-height: 41px;
+    border: 2px solid transparent;
+    transition: border .2s;
+}
+
+.content .nav .view a.active,
+.content .nav .view a:hover {
+    border-bottom: 2px solid #E9908A;
+}
+
+.content .nav .back-btn span {
+    font-size: 25px;
+    padding-right: 0;
+}
+
+.content .nav .new-ill-btn span {
+    font-size: 17px;
+    padding-right: 6px;
+}
+
+.content .dbl-help {
+    position: absolute;
+    margin-top: 90px;
+    color: #bbb;
+}
+
+.content input {
+    margin-bottom: 50px;
+}
+
+.content .table-view {
+    /* display: none; */
+}
+
+.content .patient-ills {
+    display: none;
+}
+
+.content .imaged-info,
+.sidebar .part-info {
+    display: none;
+}
+
+path {
+    stroke: #ff8080;
+    fill: #FFF;
+}
+
+path:hover {
+    fill: #ffc1c1;
+}
+
+.imaged-info {
+    height: calc(100vh - 45px);
+    width: calc(100vw - 320px);
+    position: absolute;
+    top: 45px;
+    left: 320px;
+    overflow-x: hidden;
+}
+
+.female-model {
+    margin-left: -80%;
+    width: 170%;
+}
+
+.male-model {
+    width: 100%;
+}
+
+.new-ill select {
+    height: 35px;
+    padding: 0 7px;
+}
+
+.new-ill textarea {
+    width: 100%;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    margin: 7px 0 20px 0;
+    background: #FAFAFA;
+    border-radius: 3px;
+    border: 1px solid #EFEFEF;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .03);
+    display: block;
+    resize: vertical;
+}
+
+.content h2 {
+    margin: 20px -1px;
+}
+
+/***************** DIALOGS ****************/
+/* NEW USER */
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    z-index: 10;
+    display: none;
+    opacity: 0;
+}

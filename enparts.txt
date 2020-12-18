@@ -1,0 +1,1 @@
+["head", "l-eye", "r-eye", "l-ear", "r-ear", "nose", "mouth", "neck", "chest", "breast", "stomach", "pelvis", "anal", "l-shoulder", "r-shoulder", "l-up-arm", "r-up-arm", "l-elbow", "r-elbow", "l-down-arm", "r-down", "l-wrist", "r-wrist", "l-palm", "r-palm", "l-up-leg", "r-up-leg", "l-knee", "r-knee", "l-down-leg", "r-down-leg", "l-foot", "r-foot"]

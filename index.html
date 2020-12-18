@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomius</title>
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/select.dataTables.min.css">
+    <link rel="stylesheet" href="fonts/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="part-info"></div>
+        <div class="new-patient">
+            <p class="name">
+                <label for="name">Новый пациент: <span class="error"></span> <input type="text" id="name" placeholder="ФИО (Фамилия Имя Отчество)" maxlength="40"></label>
+            </p>
+            <p class="sex">Пол: <span class="error"></span></p>
+            <p class="radios">
+                <input type="radio" name="sex" id="male" value="Мужчина"><label for="male">Мужчина</label>
+                <input type="radio" name="sex" id="female" value="Женщина"><label for="female">Женщина</label>
+            </p>
+            <p class="date">
+                <label for="date">Дата: <span class="error"></span><input type="date" name="date" id="date"></label>
+            </p>
+            <button class="btn submit-patient">Добавить пациента</button>
+        </div>
+        <div class="new-ill">
+            <label class="ill-name" for="ill-name">Новая болезнь: <span class="error"></span> <input type="text" name="ill-name" id="ill-name" placeholder="Название болезни" maxlength="40"></label>
+            <label class="ill-part" for="ill-part">Часть тела болезни <span class="error"></span></label>
+            <select name="ill-part" id="ill-part">
+                <option value="1">Не выбрано</option>
+                <option value="2">Голова</option>
+                <option value="3">Левый глаз</option>
+                <option value="4">Правый глаз</option>
+                <option value="5">Левое ухо</option>
+                <option value="6">Правое ухо</option>
+                <option value="7">Нос</option>
+                <option value="8">Рот</option>
+                <option value="9">Шея</option>
+                <option value="10">Грудь</option>
+                <option value="11" id="opt-breast">Грудь (материнская)</option>
+                <option value="12">Живот</option>
+                <option value="13">Таз</option>
+                <option value="14">Анал</option>
+                <option value="15">Левое плечо</option>
+                <option value="16">Правое плечо</option>
+                <option value="17">Левая верхняя часть руки</option>
+                <option value="18">Правая верхняя часть руки</option>
+                <option value="19">Левая локоть</option>
+                <option value="20">Правая локоть</option>
+                <option value="21">Левая нижняя часть руки</option>
+                <option value="22">Правая нижняя часть руки</option>
+                <option value="23">Левая кисть</option>
+                <option value="24">Правая кисть</option>
+                <option value="25">Левая ладонь</option>
+                <option value="26">Правая ладонь</option>
+                <option value="27">Левая верхняя часть ноги</option>
+                <option value="28">Правая верхняя часть ноги</option>
+                <option value="29">Левое колено</option>
+                <option value="30">Правое колено</option>
+                <option value="31">Левая нижняя часть ноги</option>
+                <option value="32">Правая нижняя часть ноги</option>
+                <option value="33">Левая ступа</option>
+                <option value="34">Правая ступа</option>
+            </select>
+            <label class="desc" for="desc">Описание болезни <span class="error"></span></label>
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Описание болезни..."></textarea>
+            <button class="btn submit-ill">Добавить болезнь</button>
+        </div>
+    </div><!-- .sidebar -->
+    <div class="content">
+        <div class="table-view">
+            <div class="nav">
+                <a class="btn remove"><span class="pe-7s-trash"></span> Удалить</a>
+                <a class="btn sync"><span class="pe-7s-refresh-2"></span> Синхронизация</a>
+            </div>
+            <h2>Пациенты</h2>
+            <small class="dbl-help">* двойное нажатие для того чтобы выбрать пациента</small>
+            <table id="patients" style="width: 100%"></table>
+        </div>
+        <div class="patient-ills">
+            <div class="nav">
+                <a class="back-btn btn"><span class="pe-7s-angle-left"></span> Назад</a>
+                <!-- <a class="btn save"><span class="pe-7s-diskette"></span> Сохранить</a> -->
+                <a class="btn remove"><span class="pe-7s-trash"></span> Удалить</a>
+                <div class="view">
+                    <span>Вид:</span>
+                    <a class="tabled-btn btn active">Список</a>
+                    <a class="imaged-btn btn">Рисунок</a>
+                </div>
+            </div>
+            <div class="selected-patient"></div>
+            <div class="imaged-info"></div>
+            <div class="tabled-info">
+                <h2>Болезни пациента "<span id="rowId"></span>"</h2>
+                <small class="dbl-help">* двойное нажатие для того чтобы выбрать болезнь</small>
+                <table id="ills"></table>
+            </div>
+        </div>
+    </div><!-- .content -->
+    <script>
+        require('./renderer.js')
+        // let jQuery = require('./js/jquery-3.3.1.js')
+    </script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/datatables.min.js"></script>
+    <script src="js/dataTables.select.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
